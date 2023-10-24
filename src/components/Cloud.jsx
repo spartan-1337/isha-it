@@ -12,16 +12,16 @@ export function Cloud({ sceneOpacity, ...props }) {
 
   const materialRef = useRef();
 
-//   useFrame(() => {
-//     materialRef.current.opacity = sceneOpacity.current;
-//   });
+  useFrame(() => {
+    materialRef.current.opacity = sceneOpacity.current;
+  });
 
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Mball001.geometry}>
         <meshStandardMaterial
           ref={materialRef}
-        //   onBeforeCompile={fadeOnBeforeCompile}
+          onBeforeCompile={fadeOnBeforeCompile}
           envMapIntensity={2}
           transparent
         />
